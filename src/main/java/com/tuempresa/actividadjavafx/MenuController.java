@@ -93,29 +93,6 @@ public class MenuController {
         alert.showAndWait();
     }
 
-    public void mostrarContextMenu() {
-
-        ContextMenu contextMenu = new ContextMenu();
-
-        MenuItem estudiantes = new MenuItem("Registro de Estudiantes");
-        MenuItem peliculas = new MenuItem("Registro de Películas");
-        MenuItem desarrollador = new MenuItem("Desarrollador");
-
-        estudiantes.setOnAction(event -> abrirEstudiantes(event));
-        peliculas.setOnAction(event -> abrirPeliculas(event));
-        desarrollador.setOnAction(event -> mostrarDesarrollador());
-
-        contextMenu.getItems().addAll(
-                estudiantes,
-                peliculas,
-                desarrollador
-        );
-
-        contextMenu.show(mainPane,
-                mainPane.localToScreen(mainPane.getBoundsInLocal()).getMinX() + 100,
-                mainPane.localToScreen(mainPane.getBoundsInLocal()).getMinY() + 100
-        );
-    }
 
     private void mostrarError(String mensaje) {
 
@@ -126,5 +103,30 @@ public class MenuController {
         alert.setContentText(mensaje);
 
         alert.showAndWait();
+    }
+
+    public void mostrarContextMenu(javafx.scene.input.ContextMenuEvent event) {
+
+        ContextMenu contextMenu = new ContextMenu();
+
+        MenuItem estudiantes = new MenuItem("Registro de Estudiantes");
+        MenuItem peliculas = new MenuItem("Registro de Películas");
+        MenuItem desarrollador = new MenuItem("Desarrollador");
+
+        estudiantes.setOnAction(this::abrirEstudiantes);
+        peliculas.setOnAction(this::abrirPeliculas);
+        desarrollador.setOnAction(e -> mostrarDesarrollador());
+
+        contextMenu.getItems().addAll(
+                estudiantes,
+                peliculas,
+                desarrollador
+        );
+
+        contextMenu.show(
+                mainPane,
+                event.getScreenX(),
+                event.getScreenY()
+        );
     }
 }
