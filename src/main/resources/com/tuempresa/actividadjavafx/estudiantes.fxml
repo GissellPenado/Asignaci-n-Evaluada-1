@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER"
+      prefHeight="600.0"
+      prefWidth="600.0"
+      spacing="15.0"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.tuempresa.actividadjavafx.EstudiantesController">
+
+    <padding>
+        <Insets top="25"
+                right="30"
+                bottom="25"
+                left="30"/>
+    </padding>
+
+
+    <Label text="REGISTRO DE ESTUDIANTES">
+
+        <font>
+            <Font size="24.0"/>
+        </font>
+
+    </Label>
+
+
+    <TextField fx:id="txtNombre"
+               promptText="Ingrese el nombre"
+               prefWidth="400.0"/>
+
+
+    <TextField fx:id="txtApellido"
+               promptText="Ingrese el apellido"
+               prefWidth="400.0"/>
+
+
+    <TextField fx:id="txtCarnet"
+               promptText="Ingrese el número de carnet"
+               prefWidth="400.0"/>
+
+
+    <TextField fx:id="txtCarrera"
+               promptText="Ingrese la carrera"
+               prefWidth="400.0"/>
+
+
+    <TextField fx:id="txtEdad"
+               promptText="Ingrese la edad"
+               prefWidth="400.0"/>
+
+
+    <HBox alignment="CENTER"
+          spacing="15.0">
+
+        <Button text="Guardar"
+                onAction="#guardarEstudiante"
+                prefWidth="120.0"/>
+
+        <Button text="Limpiar"
+                onAction="#limpiarCampos"
+                prefWidth="120.0"/>
+
+    </HBox>
+
+
+    <Label text="Información registrada"/>
+
+
+    <TextArea fx:id="txtResultado"
+              editable="false"
+              prefHeight="180.0"
+              prefWidth="500.0"
+              wrapText="true"
+              promptText="Aquí aparecerán los datos del estudiante"/>
+
+</VBox>

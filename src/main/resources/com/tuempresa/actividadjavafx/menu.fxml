@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane"
+            onContextMenuRequested="#mostrarContextMenu"
+            prefHeight="500.0"
+            prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.tuempresa.actividadjavafx.MenuController">
+
+    <top>
+        <MenuBar>
+
+            <menus>
+
+                <!-- MENÚ CATÁLOGO -->
+                <Menu text="Catálogo">
+
+                    <items>
+
+                        <MenuItem text="Registro de Estudiantes"
+                                  onAction="#abrirEstudiantes"/>
+
+                        <MenuItem text="Registro de Películas"
+                                  onAction="#abrirPeliculas"/>
+
+                    </items>
+
+                </Menu>
+
+
+                <!-- MENÚ DESARROLLADOR -->
+                <Menu text="Desarrollador">
+
+                    <items>
+
+                        <MenuItem text="Información del desarrollador"
+                                  onAction="#mostrarDesarrollador"/>
+
+                    </items>
+
+                </Menu>
+
+
+                <!-- TERCER MENÚ -->
+                <Menu text="Ayuda">
+
+                    <items>
+
+                        <MenuItem text="Información de la aplicación"
+                                  onAction="#mostrarAyuda"/>
+
+                    </items>
+
+                </Menu>
+
+            </menus>
+
+        </MenuBar>
+    </top>
+
+
+    <center>
+
+        <VBox alignment="CENTER"
+              spacing="20">
+
+            <Label text="SISTEMA DE REGISTRO">
+
+                <font>
+                    <Font size="28.0"/>
+                </font>
+
+            </Label>
+
+            <Label text="JavaFX - Actividad Sumativa #1"/>
+
+            <Label text="Haz clic derecho para abrir el menú contextual"/>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
